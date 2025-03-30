@@ -3,25 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Autor;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\AutorResource;
+use App\Http\Resources\AutorCollection;
 
 class AutorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return response()->json(new AutorCollection(Autor::all()),Response::HTTP_OK);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Autor $autor)
     {
-        //
+        return new AutorResource($autor);
     }
 
 }
