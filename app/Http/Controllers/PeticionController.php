@@ -20,7 +20,7 @@ class PeticionController extends Controller
     public function store(Request $request)
     {
         $peticion = Peticion::create($request->only([
-            'titulo','descripcion','categoria','autor','votos'
+            'titulo','descripcion','categoria','autor','firmas'
         ]));
         return new PeticionResource($peticion);
     }
@@ -34,7 +34,7 @@ class PeticionController extends Controller
     {
         //Deberia haber un check para que un usuario solo pueda editar registros creados por si mismo
         $peticion->update($request->only([
-            'titulo','descripcion','categoria','autor','votos'
+            'titulo','descripcion','categoria','autor','firmas'
         ]));
     }
 

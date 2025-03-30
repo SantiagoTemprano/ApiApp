@@ -10,5 +10,5 @@ class Peticion extends Model
     /** @use HasFactory<\Database\Factories\PeticionFactory> */
     use HasFactory;
     protected $table = 'peticiones';
-    protected $fillable = ['titulo','descripcion','categoria','autor','votos'];
+    protected $fillable = ['titulo','descripcion','categoria','autor','firmas'];
 }
